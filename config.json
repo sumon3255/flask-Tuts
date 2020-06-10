@@ -1,0 +1,25 @@
+{
+  "params":
+  {
+   "local_server": "True",
+    "local_uri": "mysql://root:@localhost/codingmic",
+    "prood_uri": "mysql://root:@localhost/codingmic",
+    "fb_url": "https://facebook.com/MISTInnovationClub",
+    "tw_url": "https://twitter.com/codingmic",
+    "gh_url":"https://github.com/codingmic",
+    "blog_name": "sumon3255ms",
+    "tag_line": "Welcom to my blog",
+    "gmail-user": "sumon3255.ms@gmail.com",
+    "gmail-password": "01714296673",
+    "about_text": "HI MY NAME IS Md Shaheenur Islam Sumon And I created This Blog And I am A Biomedical Engineer",
+    "num_of_post":3,
+    "login_image": "logo3.jpg",
+    "admin_user":"SUMON",
+    "admin_password": "shah",
+   "upload_location":"C:\\Users\\user\\PycharmProjects\\tutflasks\\static"
+  }
+
+
+
+
+}

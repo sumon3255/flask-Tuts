@@ -1,0 +1,149 @@
+
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+  <!-- Page Header -->
+ 
+      {% set fname = 'img/' + post.img_file %}
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename=fname) }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{post.title}}</h1>
+            <h2 class="subheading">{{post.tag_line}}</h2>
+            <span class="meta">Posted by
+              <a href="#">Sumon</a>
+              on {{post.date}}</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+     {% with messages = get_flashed_messages(with_categories=True)%}
+    {%if messages %}
+    {%for category ,message in messages%}
+
+    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+     {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+
+    {% endif %}
+    {% endwith  %}
+
+
+
+     <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          {{post.content}}
+          
+        </div>
+      </div>
+    </div>
+    <hr>
+      <dev class="comment-sec-area">
+        <div class="container">
+      <div class="row flex-column">
+        <h2>Comments</h2>
+
+  
+
+        {%for comment in comments%}
+
+        <div class="comment-list">
+          <div class="single-comment justify-content-between
+          d-flex">
+
+          <div class="user justify-content-between d-flex">
+            <div class="thumb">
+              <img src="img/blog/c1.jpg" alt="">
+            </div>
+            <div class="desc">
+              <h5><a href="#">{{comment.name}}</a></h5>
+              <p class="date">{{comment.date}}</p>
+              <p class="comment">{{comment.msg}}</p>
+            </div>
+            <div class="reply-btn">
+              <a href="" class="btn-reply
+              text-uppercase">reply</a>
+            </div>
+          </div>
+        </div>
+        <td><a href="/cut/{{comment.sno}}"> <button class="btn btn-primary">Delete</button></a></td>
+
+
+      {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+    
+      <div class="Comment-form">
+
+      <h4>Post Comments</h4>
+      <form method="post" >
+        <div class="form-group from-inline">
+          <div class="form-group col-lg-6 col-md-12 name">
+            <input type="text" name="name" class="form-control"
+            id="name" placeholder="Enter name"
+            onfocus="this.placeholder =''"
+            onblur="this.placeholder ='Enter name'">
+          </div>
+                <div class="form-group col-lg-6 col-md-12 email">
+            <input type="email" name="email" class="form-control"
+            id="email" placeholder="Enter Yor Email Adress"
+            onfocus="this.placeholder =''"
+            onblur="this.placeholder ='Enter your email adress'">
+          </div>
+            </div>
+                <div class="form-group"> 
+                  <textarea class="form-control mb-10" rows="5" name="message"
+                  placeholder="Message" 
+                  onfocus="this.placeholder=''"onblur="this.placeholder
+                  ='Message'" 
+                  required=""></textarea> 
+
+
+                  </div>
+              <!--     <button type="submit" class="primary-btn text-uppercase">Post Comment</button> -->
+                  <button type="submit"  class="btn btn-primary">Post Comment</button>
+
+                </form>
+                    
+
+
+
+                  </textarea>
+
+    
+    
+
+
+{% endblock %}
+
